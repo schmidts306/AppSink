@@ -7,14 +7,14 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <name>Abendbrot App</name>
+    <name>App Sink</name>
 
     <description>
-	    Order your favourite Abendbrot Products on your smartphone. 
+	    Test various Phonegap features. 
 	</description>
 	
-	<author href="http://www.abendbrot.com.cn" email="shop@abendbrot.com.cn">
-	    Abendbrot
+	<author href="http://www.civit.de" email="s.schmidt@civit.de">
+	    Stefan Schmidt
 	</author>
     
 	<icon src="res/dummy.jpg" />
