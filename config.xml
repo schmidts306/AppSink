@@ -17,8 +17,8 @@
 	    Stefan Schmidt
 	</author>
     
-	<icon src="res/dummy.jpg" />
-	<gap:splash src="res/platzhalter.jpg" />
+	<icon src="res/icon.png" />
+	<gap:splash src="res/splash.png" />
     <preference name="orientation" value="landscape" />
     <preference name="fullscreen" value="true" />
     <access origin="*" />
