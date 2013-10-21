@@ -6,6 +6,8 @@
 	<body>
 		<a href="#" onclick="$('body>div').hide(); $('#videotest').show(); return false;">Video</a>
 		<a href="#" onclick="animationtest(); return false;">Animation</a>
+		<a href="#" onclick="childbrowser(); return false;">ChildBrowser</a>
+		<a href="#" onclick="alert('abc'); return false;">Alert</a>
 		<div id="videotest" style="display: none;">
 			<h1>Video Test</h1>
 			<video src="res/example_video.mp4" width="640" height="360" poster="res/example_video.png" autobuffer controls>Video Player
@@ -32,5 +34,10 @@
 			$('#square1').animate({height: '300px'}, 500);
 		}
 		
+		function childbrowser() {
+			if (window.plugins == undefined) alert("plugins not available");
+			if (window.plugins.childBrowser == undefined) alert("childbrowser plugin not available");
+			window.plugins.childBrowser.showWebPage('http://www.google.com', { showLocationBar: true });
+		}
 	</script>
 </html>
