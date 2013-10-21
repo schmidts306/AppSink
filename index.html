@@ -1,10 +1,36 @@
 <html>
 	<head>
 		<title>Test Tilte</title>
+		<script src="lib/jquery-2.0.3.min.js"></script>
 	</head>
 	<body>
-		<h1>Video Test</h1>
-		<video src="res/example_video.mp4" width="640" height="360" poster="res/example_video.png" autobuffer autoplay controls>Video Player
-		</video>
+		<a href="#" onclick="$('body>div').hide(); $('#videotest').show(); return false;">Video</a>
+		<a href="#" onclick="animationtest(); return false;">Animation</a>
+		<div id="videotest" style="display: none;">
+			<h1>Video Test</h1>
+			<video src="res/example_video.mp4" width="640" height="360" poster="res/example_video.png" autobuffer controls>Video Player
+			</video>
+		</div>
+		<div id="animationtest" style="display: none;">
+			<p id="text1" style="position: absolute; width: 300px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,</p> 
+			<p id="text2" style="position: absolute; width: 400px;">imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.</p> 
+			<div id="square1" style="position: absolute; width: 200px; height: 200px; background: #f00;"></div>
+		</div>
 	</body>
+	<script>
+		$().ready(function() {
+			
+		});
+		function animationtest() {
+			$('body>div').hide();
+			$('#animationtest').show();
+			$('#text1').css({left: 0, top: 0});
+			$('#text2').css({left: 0, top: 0});
+			$('#square1').css({height: '200px'});
+			$('#text1').animate({left: '300px', top: '300px'}, 500);
+			$('#text2').animate({left: '220px'}, 500);
+			$('#square1').animate({height: '300px'}, 500);
+		}
+		
+	</script>
 </html>
