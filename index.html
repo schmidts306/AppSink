@@ -7,16 +7,20 @@
 		<script src="lib/idangerous.swiper-2.1.min.js"></script>
 		<link rel="stylesheet" href="lib/idangerous.swiper.css">
 		<style>
-			.swiper-container { width: 500px; height: 330px; border: 1px solid #ccc; }
-			.swiper-container img { width: 500px; }
+			.swiper-container { width: 600px; height: 400px; border: 1px solid #ccc; margin-top: 20px; }
+			.swiper-container img { width: 600px; }
+			.nav a { font-size: 1.2em; margin-left: 20px; }
 		</style>
 	</head>
 	<body>
-		<a href="#" onclick="$('body>div').hide(); $('#videotest').show(); return false;">Video</a>
-		<a href="#" onclick="animationtest(); return false;">Animation</a>
-		<a href="#" onclick="pdfpreview(); return false;">PDF Preview</a>
-		<a href="res/example.pdf">open PDF</a>
-		<a href="#" onclick="childbrowser(); return false;">ChildBrowser</a>
+		<span class="nav">			
+			<a href="#" onclick="$('body>div').hide(); $('#videotest').show(); return false;">Video</a>
+			<a href="#" onclick="animationtest(); return false;">Animation</a>
+			<a href="#" onclick="pdfpreview(); return false;">PDF Preview</a>
+			<a href="#" onclick="window.open('http://www.civit.de/downloads/sap/example.pdf', '_blank');">open PDF</a>
+			<a href="#" onclick="window.open('http://www.civit.de/downloads/sap/example.pdf', '_system');">open PDF sys</a>
+			<a href="#" onclick="childbrowser(); return false;">ChildBrowser</a>
+		</span>
 		<div id="videotest" style="display: none;">
 			<h1>Video Test</h1>
 			<video src="res/example_video.mp4" width="640" height="360" poster="res/example_video.png" autobuffer controls>Video Player
@@ -47,8 +51,8 @@
 		function animationtest() {
 			$('body>div').hide();
 			$('#animationtest').show();
-			$('#text1').css({left: 0, top: 0});
-			$('#text2').css({left: 0, top: 0});
+			$('#text1').css({left: 0, top: "20px"});
+			$('#text2').css({left: 0, top: "20px"});
 			$('#square1').css({height: '200px'});
 			$('#text1').animate({left: '300px', top: '300px'}, 500);
 			$('#text2').animate({left: '220px'}, 500);
@@ -58,7 +62,7 @@
 		function childbrowser() {
 			if (window.plugins == undefined) alert("plugins not available");
 			if (window.plugins.childBrowser == undefined) alert("childbrowser plugin not available");
-			window.plugins.childBrowser.showWebPage('res/example.pdf', { showLocationBar: false });
+			window.plugins.childBrowser.showWebPage('http://www.civit.de/downloads/sap/example.pdf', { showLocationBar: true });
 		}
 		
 		function pdfpreview() {
