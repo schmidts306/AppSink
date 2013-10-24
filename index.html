@@ -15,6 +15,7 @@
 		<a href="#" onclick="$('body>div').hide(); $('#videotest').show(); return false;">Video</a>
 		<a href="#" onclick="animationtest(); return false;">Animation</a>
 		<a href="#" onclick="pdfpreview(); return false;">PDF Preview</a>
+		<a href="res/example.pdf">open PDF</a>
 		<a href="#" onclick="childbrowser(); return false;">ChildBrowser</a>
 		<div id="videotest" style="display: none;">
 			<h1>Video Test</h1>
@@ -57,7 +58,7 @@
 		function childbrowser() {
 			if (window.plugins == undefined) alert("plugins not available");
 			if (window.plugins.childBrowser == undefined) alert("childbrowser plugin not available");
-			window.plugins.childBrowser.showWebPage('http://www.google.com', { showLocationBar: true });
+			window.plugins.childBrowser.showWebPage('res/example.pdf', { showLocationBar: false });
 		}
 		
 		function pdfpreview() {
