@@ -4,12 +4,18 @@
 		<script src="lib/jquery-2.0.3.min.js"></script>
 		<script src="phonegap.js"></script>
 		<script src="childbrowser.js"></script>
+		<script src="lib/idangerous.swiper-2.1.min.js"></script>
+		<link rel="stylesheet" href="lib/idangerous.swiper.css">
+		<style>
+			.swiper-container { width: 500px; height: 330px; border: 1px solid #ccc; }
+			.swiper-container img { width: 500px; }
+		</style>
 	</head>
 	<body>
 		<a href="#" onclick="$('body>div').hide(); $('#videotest').show(); return false;">Video</a>
 		<a href="#" onclick="animationtest(); return false;">Animation</a>
+		<a href="#" onclick="pdfpreview(); return false;">PDF Preview</a>
 		<a href="#" onclick="childbrowser(); return false;">ChildBrowser</a>
-		<a href="#" onclick="alert('abc'); return false;">Alert</a>
 		<div id="videotest" style="display: none;">
 			<h1>Video Test</h1>
 			<video src="res/example_video.mp4" width="640" height="360" poster="res/example_video.png" autobuffer controls>Video Player
@@ -19,6 +25,18 @@
 			<p id="text1" style="position: absolute; width: 300px;">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut,</p> 
 			<p id="text2" style="position: absolute; width: 400px;">imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet.</p> 
 			<div id="square1" style="position: absolute; width: 200px; height: 200px; background: #f00;"></div>
+		</div>
+		<div id="pdfpreview" style="display: none;">
+			<div class="swiper-container">
+		      <div class="swiper-wrapper">
+		        <div class="swiper-slide"> <img src="res/sap_guide-0.png"> </div>
+		        <div class="swiper-slide"> <img src="res/sap_guide-1.png"> </div>
+		        <div class="swiper-slide"> <img src="res/sap_guide-2.png"> </div>
+		        <div class="swiper-slide"> <img src="res/sap_guide-3.png"> </div>
+		        <div class="swiper-slide"> <img src="res/sap_guide-4.png"> </div>
+		        <div class="swiper-slide"> <img src="res/sap_guide-5.png"> </div>
+		      </div>
+		    </div>
 		</div>
 	</body>
 	<script>
@@ -40,6 +58,12 @@
 			if (window.plugins == undefined) alert("plugins not available");
 			if (window.plugins.childBrowser == undefined) alert("childbrowser plugin not available");
 			window.plugins.childBrowser.showWebPage('http://www.google.com', { showLocationBar: true });
+		}
+		
+		function pdfpreview() {
+			$('body>div').hide();
+			$('#pdfpreview').show();
+			var mySwiper = new Swiper('.swiper-container');
 		}
 	</script>
 </html>
